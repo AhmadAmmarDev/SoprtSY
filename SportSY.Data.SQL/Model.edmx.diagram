@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="df612c3210a0449aaa654566cf416d0e" Name="Diagram1">
+        <EntityTypeShape EntityType="SYSportDBModel.Activities" Width="1.5" PointX="8" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSportDBModel.ActivityTypes" Width="1.5" PointX="5.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSportDBModel.Cities" Width="1.5" PointX="8" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSportDBModel.Countries" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSportDBModel.Persons" Width="1.5" PointX="10.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSportDBModel.Places" Width="1.5" PointX="10.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSportDBModel.PlacesTypes" Width="1.5" PointX="8" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSportDBModel.RequestStatusTypes" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSportDBModel.RequestsTypes" Width="1.5" PointX="1.5" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSportDBModel.Rquest" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSportDBModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSportDBModel.Teams" Width="1.5" PointX="3.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSportDBModel.Users" Width="1.5" PointX="13" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSportDBModel.RequestStatuses" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSportDBModel.TeamMembers" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
+        <AssociationConnector Association="SYSportDBModel.FK_Activities_ActivityTypes_ActivityTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSportDBModel.FK_Cities_Countries_CountryID" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSportDBModel.FK_Places_Cities_CityID" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSportDBModel.FK_Users_Persons_PersonID" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSportDBModel.FK_Places_PlacesTypes_PlaceTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSportDBModel.FK_RequestStatuses_RequestStatusTypes_RequestStatusID" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSportDBModel.FK_RequestStatuses_RequestStatusTypes_RequestTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSportDBModel.FK_Rquest_RequestsTypes_RequestTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSportDBModel.FK_RequestStatuses_Rquest_RequestID" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSportDBModel.FK_TeamMembers_Teams_TeamID" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSportDBModel.PersonsMatches" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSportDBModel.PlacesActivities" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSportDBModel.TeamMatches" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

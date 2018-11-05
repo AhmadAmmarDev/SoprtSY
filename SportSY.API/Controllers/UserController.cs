@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using SportSY.Core.Models;
+
+namespace SportSY.API.Controllers
+{
+    [Produces("application/json")]
+    [Route("api/User")]
+    public class UserController : Controller
+    {
+        public ActionResult RegisterUser(Person person)
+        {
+            return Ok();
+        }
+    }
+}
