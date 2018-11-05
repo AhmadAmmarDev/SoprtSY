@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportSY.API", "SportSY.API\SportSY.API.csproj", "{7E0BC0C6-A7F8-42CD-A3FC-13414F123E2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportSY.Client", "SportSY.Client\SportSY.Client.csproj", "{3FB2D58A-3E24-457B-B421-3B2236914BAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E0BC0C6-A7F8-42CD-A3FC-13414F123E2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E0BC0C6-A7F8-42CD-A3FC-13414F123E2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E0BC0C6-A7F8-42CD-A3FC-13414F123E2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E0BC0C6-A7F8-42CD-A3FC-13414F123E2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FB2D58A-3E24-457B-B421-3B2236914BAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FB2D58A-3E24-457B-B421-3B2236914BAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FB2D58A-3E24-457B-B421-3B2236914BAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FB2D58A-3E24-457B-B421-3B2236914BAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {324E933F-4367-414B-9FF1-716CF444C94F}
+	EndGlobalSection
+EndGlobal
