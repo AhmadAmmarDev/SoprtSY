@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace SportSY.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[Action]")]
     public class ValuesController : Controller
     {
         // GET api/values
