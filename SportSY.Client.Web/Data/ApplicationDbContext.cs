@@ -38,7 +38,7 @@ namespace SportSY.Client.Web.Data
             });
             builder.Entity<UserRole>(entity =>
             {
-                entity.ToTable(name: "UserRoles");
+                entity.ToTable(name: "AspNetUserRoles");
                 //entity.Property(e => e.Id).HasColumnName("UserId");
 
             });
