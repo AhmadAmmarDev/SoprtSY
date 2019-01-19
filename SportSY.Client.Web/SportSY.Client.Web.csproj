@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
     <UserSecretsId>aspnet-SportSY.Client.Web-31ED4F40-0A47-4CEA-900A-7C9ADC1695BD</UserSecretsId>
   </PropertyGroup>
 
@@ -157,8 +157,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.2" PrivateAssets="All" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0-preview.18571.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -609,6 +609,11 @@
     <None Include="wwwroot\bower_components\jquery\src\var\support.js" />
     <None Include="wwwroot\bower_components\jquery\src\var\toString.js" />
     <None Include="wwwroot\bower_components\jquery\src\wrap.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SportSY.Core\SportSY.Core.csproj" />
+    <ProjectReference Include="..\SportSY.Data.Repository.SQL\SportSY.Data.Repository.SQL.csproj" />
   </ItemGroup>
 
   <ItemGroup>

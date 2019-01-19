@@ -13,6 +13,7 @@ using Microsoft.Extensions.Options;
 using SportSY.Client.Web.Models;
 using SportSY.Client.Web.Models.AccountViewModels;
 using SportSY.Client.Web.Services;
+using SportSY.Core.Interfaces;
 
 namespace SportSY.Client.Web.Controllers
 {
@@ -24,17 +25,19 @@ namespace SportSY.Client.Web.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
-
+        private IPersonRepository _personRepository { get; set; }
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
-            ILogger<AccountController> logger)
+            ILogger<AccountController> logger,
+            IPersonRepository personRepository)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _logger = logger;
+            _personRepository = personRepository;
         }
 
         [TempData]
@@ -59,11 +62,13 @@ namespace SportSY.Client.Web.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
+                _personRepository.GetItems().ToList();
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
+                  
                     _logger.LogInformation("ApplicationUser logged in.");
                     return RedirectToLocal(returnUrl);
                 }

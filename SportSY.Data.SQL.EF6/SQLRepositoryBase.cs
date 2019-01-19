@@ -10,7 +10,8 @@ namespace SportSY.Data.SQL
 {
     public abstract class SQLRepositoryBase<TModel, TTable> : IRepository<TModel>
         where TModel : Model, new() where TTable : class, new()
-    {       
+    {
+     
 
         public SQLRepositoryBase()
         {
@@ -30,6 +31,8 @@ namespace SportSY.Data.SQL
                 IsInitialized = true;
             }
         }
+
+ 
         
         private SYSportDBEntities _db;
         public SYSportDBEntities DB

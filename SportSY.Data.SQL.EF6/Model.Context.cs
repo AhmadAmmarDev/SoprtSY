@@ -19,6 +19,8 @@ namespace SportSY.Data.SQL
             : base("name=SYSportDBEntities")
         {
         }
+
+   
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

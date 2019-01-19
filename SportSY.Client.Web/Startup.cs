@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using SportSY.Client.Web.Data;
 using SportSY.Client.Web.Models;
 using SportSY.Client.Web.Services;
+using SportSY.Core.Interfaces;
+using SportSY.Data.Repository.SQL.Repositories;
 
 namespace SportSY.Client.Web
 {
@@ -42,6 +44,7 @@ namespace SportSY.Client.Web
             services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddMvc();
+            services.AddScoped<IPersonRepository, PersonRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
