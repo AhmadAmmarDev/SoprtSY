@@ -7,8 +7,7 @@ using SportSY.Data.Repository.SQL.Models;
 
 namespace SportSY.Data.Repository.SQL.Repositories
 {
-    public class PersonRepository : SQLRepositoryBase<Person, Persons>, IPersonRepository
+    public class TeamsRepository : SQLRepositoryBase<Team,Teams> , ITeamRepository
     {
-       
     }
 }

@@ -45,6 +45,7 @@ namespace SportSY.Client.Web
 
             services.AddMvc();
             services.AddScoped<IPersonRepository, PersonRepository>();
+            services.AddScoped<ITeamRepository, TeamsRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

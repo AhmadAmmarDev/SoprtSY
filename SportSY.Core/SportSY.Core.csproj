@@ -41,10 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IPersonRepository.cs" />
+    <Compile Include="Interfaces\ITeamRepository.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Models\Model.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Team.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
