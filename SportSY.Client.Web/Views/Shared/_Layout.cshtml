@@ -160,7 +160,7 @@
                     </li>
                     <li><a asp-area="" asp-controller="Account" asp-action="Register">Register</a></li>
                     <li><a asp-area="" asp-controller="Account" asp-action="Login">Log in</a></li>
-                    @*@await Html.PartialAsync("_LoginPartial")*@
+                    @await Html.PartialAsync("_LoginPartial")
                     <li class="has-children">
                         <a href="news.html">News</a>
                         <ul class="dropdown arrow-top">
@@ -170,10 +170,13 @@
                         </ul>
                     </li>
 
-                    <li><a href="../wwwroot/pages/matches.html">Matches</a></li>
-                    <li><a href="../wwwroot/pages/team.html">Team</a></li>
-                    <li><a href="../wwwroot/pages/about.html">About</a></li>
-                    <li><a href="../wwwroot/pages/contact.html">Contact</a></li>
+                    @*<li><a href="../wwwroot/pages/matches.html">Matches</a></li>*@
+                    <li><a asp-area="" asp-controller="Match" asp-action="Index">Matches</a></li>
+
+                    @*<li><a href="../wwwroot/pages/team.html">Team</a></li>*@
+                    <li><a asp-area="" asp-controller="Team" asp-action="Index">Teams</a></li>
+                    <li><a href="~/pages/about.html">About</a></li>
+                    <li><a href="~/pages/contact.html">Contact</a></li>
                 </ul>
             </div>
         </nav>
