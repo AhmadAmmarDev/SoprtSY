@@ -1,0 +1,42 @@
+﻿@using SportSY.Core.Models
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@*@inject Person PersonModel*@
+<p> create team pls !!!</p>
+<ul id="playersList">
+    @{
+        List<Person> persons = ViewBag.Persons;
+        foreach (var person in persons)
+        {
+            <li>
+                <div class="personItem">
+                    <div id="personImage">
+                        <img src="~/images/basketball-player.png" class="playerAvatar" />
+                    </div>
+                    <div class="personInfomation">
+                        <h3>
+                            <p>@person.FirstName + " " + @person.LastName</p>
+                        </h3>
+                        <h5>Goal Keeper</h5>
+                    </div>
+                </div>
+            </li>
+        }
+    }
+    <li>
+        <div class="personItem">
+            <div id="personImage">
+                <img src="~/images/basketball-player.png" class="playerAvatar" />
+            </div>
+            <div class="personInfomation">
+                <h3>
+                    <p>Ahmad Ammar</p>
+                </h3>
+                <h5>Goal Keeper</h5>
+            </div>
+        </div>
+    </li>
+</ul>

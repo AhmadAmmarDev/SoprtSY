@@ -6,21 +6,47 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
-        <ul class="nav navbar-nav navbar-right">
-            <li>
+    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+        <ul class="site-menu js-clone-nav d-none d-md-block">
+
+            <li class="has-children active">
+                <a href="#!/">Home <span class="sr-only">(current)</span></a>
+            </li>
+
+
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/#!/registerUser">Users</a>
+            </div>
+            <li><a asp-area="" asp-controller="Match" asp-action="Index">Matches</a></li>
+            <li><a asp-area="" asp-controller="Team" asp-action="Index">Teams</a></li>
+            <li class="has-children">
+                <a href="news.html">Management</a>
+                <ul class="dropdown arrow-top">
+                    <li>
+                        <a class="dropdown-item" href="/#!/registerUser">Users</a>
+                    </li>
+                    <li><a href="#">Menu Two</a></li>
+                    <li><a href="#">Menu Three</a></li>
+                </ul>
+            </li>
+            <li class="has-children">
                 <a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
             </li>
-            <li>
-                <button type="submit" class="btn btn-link navbar-btn navbar-link">Log out</button>
+            <li class="has-children">
+
+                <a asp-area="" asp-controller="Account" asp-action="Login">Log out</a>
             </li>
         </ul>
+
     </form>
 }
 else
-{
-    <ul class="nav navbar-nav navbar-right">
-        <li><a asp-area="" asp-controller="Account" asp-action="Register">Register</a></li>
-        <li><a asp-area="" asp-controller="Account" asp-action="Login">Log in</a></li>
-    </ul>
-}
+{<ul class="site-menu js-clone-nav d-none d-md-block">
+
+    <li class="has-children"><a asp-area="" asp-controller="Account" asp-action="Register">Register</a></li>
+    <li class="has-children"><a asp-area="" asp-controller="Account" asp-action="Login">Log in</a></li>
+    <li class="has-children"><a href="~/pages/about.html">About</a></li>
+    <li class="has-children"><a href="~/pages/contact.html">Contact</a></li>
+ </ul>
+
+    }

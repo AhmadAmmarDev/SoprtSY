@@ -33,3 +33,31 @@
         display: none;
     }
 }
+
+#createTeamButton {
+    background-color: black;
+    color: whitesmoke;
+    width:300px;
+    height:150px;
+    border:0;
+    font-size:40px;
+    padding:20px;
+}
+#createTeamButonContainer {
+    padding:0;
+}
+#playersList {
+    list-style-type: none;
+}
+.personItem {
+    display:inline-flex
+}
+.personInfomation {
+    vertical-align: middle;
+    padding-left:5px;
+    margin-left: 10px;
+}
+.playerAvatar {
+    width: 75px;
+    height: 75px;
+}
