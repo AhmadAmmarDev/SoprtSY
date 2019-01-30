@@ -146,12 +146,23 @@
     <Content Include="wwwroot\bower_components\bootstrap\site\_layouts\home.html" />
     <Content Include="wwwroot\bower_components\bootstrap\site\_layouts\redirect.html" />
     <Content Include="wwwroot\bower_components\bootstrap\site\_layouts\simple.html" />
+    <Content Include="wwwroot\bower_components\jquery-tag-editor\.bower.json" />
+    <Content Include="wwwroot\bower_components\jquery-tag-editor\bower.json" />
+    <Content Include="wwwroot\bower_components\jquery-tag-editor\jquery.tag-editor.css" />
     <Content Include="wwwroot\bower_components\jquery\.bower.json" />
     <Content Include="wwwroot\bower_components\jquery\AUTHORS.txt" />
     <Content Include="wwwroot\bower_components\jquery\bower.json" />
     <Content Include="wwwroot\bower_components\jquery\external\sizzle\LICENSE.txt" />
     <Content Include="wwwroot\bower_components\jquery\LICENSE.txt" />
     <Content Include="wwwroot\bower_components\jquery\src\.eslintrc.json" />
+    <Content Include="wwwroot\bower_components\multiselect\.bower.json" />
+    <Content Include="wwwroot\bower_components\multiselect\bower.json" />
+    <Content Include="wwwroot\bower_components\multiselect\css\multi-select.css" />
+    <Content Include="wwwroot\bower_components\multiselect\img\switch.png" />
+    <Content Include="wwwroot\bower_components\multiselect\LICENSE.txt" />
+    <Content Include="wwwroot\bower_components\multiselect\multi-select.jquery.json" />
+    <Content Include="wwwroot\bower_components\multiselect\test\lib\jasmine-1.2.0\jasmine.css" />
+    <Content Include="wwwroot\bower_components\multiselect\test\SpecRunner.html" />
   </ItemGroup>
 
 
@@ -492,6 +503,9 @@
     <None Include="wwwroot\bower_components\bootstrap\site\_includes\icons\slack.svg" />
     <None Include="wwwroot\bower_components\bootstrap\site\_includes\icons\twitter.svg" />
     <None Include="wwwroot\bower_components\bootstrap\_config.yml" />
+    <None Include="wwwroot\bower_components\jquery-tag-editor\jquery.caret.min.js" />
+    <None Include="wwwroot\bower_components\jquery-tag-editor\jquery.tag-editor.js" />
+    <None Include="wwwroot\bower_components\jquery-tag-editor\jquery.tag-editor.min.js" />
     <None Include="wwwroot\bower_components\jquery\dist\core.js" />
     <None Include="wwwroot\bower_components\jquery\dist\jquery.js" />
     <None Include="wwwroot\bower_components\jquery\dist\jquery.min.js" />
@@ -609,6 +623,16 @@
     <None Include="wwwroot\bower_components\jquery\src\var\support.js" />
     <None Include="wwwroot\bower_components\jquery\src\var\toString.js" />
     <None Include="wwwroot\bower_components\jquery\src\wrap.js" />
+    <None Include="wwwroot\bower_components\multiselect\.gitignore" />
+    <None Include="wwwroot\bower_components\multiselect\js\jquery.multi-select.js" />
+    <None Include="wwwroot\bower_components\multiselect\README.markdown" />
+    <None Include="wwwroot\bower_components\multiselect\test\lib\jasmine-1.2.0\jasmine-html.js" />
+    <None Include="wwwroot\bower_components\multiselect\test\lib\jasmine-1.2.0\jasmine.js" />
+    <None Include="wwwroot\bower_components\multiselect\test\lib\jasmine-1.2.0\MIT.LICENSE" />
+    <None Include="wwwroot\bower_components\multiselect\test\lib\jasmine-jquery.js" />
+    <None Include="wwwroot\bower_components\multiselect\test\spec\multiSelectSpec.js" />
+    <None Include="wwwroot\bower_components\multiselect\test\spec\SpecHelper.js" />
+    <None Include="wwwroot\bower_components\multiselect\test\src\jquery.js" />
   </ItemGroup>
 
   <ItemGroup>

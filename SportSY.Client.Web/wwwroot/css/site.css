@@ -48,6 +48,8 @@
 }
 #playersList {
     list-style-type: none;
+    width: 500px;
+    margin: 0;
 }
 .personItem {
     display:inline-flex
@@ -60,4 +62,13 @@
 .playerAvatar {
     width: 75px;
     height: 75px;
+}
+#creatTeamMainContainer {
+    /*display: flex;*/
+}
+#selectedPesonContainer {
+    width: 500px;
+}
+#selectedPesonContainer {
+    margin-bottom:20px;
 }

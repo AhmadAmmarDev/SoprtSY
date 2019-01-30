@@ -5,38 +5,37 @@
 @{
 }
 @*@inject Person PersonModel*@
+<head>
+    <link href="~/bower_components/jquery-tag-editor/jquery.tag-editor.css" rel="stylesheet" />
+</head>
 <p> create team pls !!!</p>
-<ul id="playersList">
-    @{
-        List<Person> persons = ViewBag.Persons;
-        foreach (var person in persons)
-        {
-            <li>
-                <div class="personItem">
-                    <div id="personImage">
-                        <img src="~/images/basketball-player.png" class="playerAvatar" />
+<div id="creatTeamMainContainer">
+    <div id="selectedPesonContainer">
+        <textarea id="selectedTeamMembers"></textarea>
+
+    </div>
+    <ul id="playersList">
+        @{
+            List<Person> persons = ViewBag.Persons;
+            foreach (var person in persons)
+            {
+                var personName = @person.FirstName +" " + @person.LastName;
+                <li>
+                    <div class="personItem" data-person-name="@personName">
+                        <div id="personImage">
+                            <img src="~/images/basketball-player.png" class="playerAvatar"/>
+                        </div>
+                        <div class="personInfomation">
+                            <h3>
+                                <p>personName</p>
+                            </h3>
+                            <h5>Goal Keeper</h5>
+                        </div>
                     </div>
-                    <div class="personInfomation">
-                        <h3>
-                            <p>@person.FirstName + " " + @person.LastName</p>
-                        </h3>
-                        <h5>Goal Keeper</h5>
-                    </div>
-                </div>
-            </li>
+                </li>
+            }
         }
-    }
-    <li>
-        <div class="personItem">
-            <div id="personImage">
-                <img src="~/images/basketball-player.png" class="playerAvatar" />
-            </div>
-            <div class="personInfomation">
-                <h3>
-                    <p>Ahmad Ammar</p>
-                </h3>
-                <h5>Goal Keeper</h5>
-            </div>
-        </div>
-    </li>
-</ul>
+    </ul>
+
+</div>
+

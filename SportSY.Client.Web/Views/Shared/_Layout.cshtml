@@ -89,7 +89,7 @@
 
     <link rel="stylesheet" href="~/css/aos.css">
     <link rel="stylesheet" href="~/css/style.css">
-    
+
     <link href="~/css/site.css" rel="stylesheet" />
 </head>
 <body>
@@ -124,7 +124,6 @@
     <div class="container body-content">
         @RenderBody()
         @*<div ng-view></div>*@
-        <hr />
     </div>
     @RenderSection("Scripts", required: false)
     <script src="~/bower_components/jquery/dist/jquery.min.js"></script>
@@ -142,5 +141,10 @@
     <script src="~/bower_components/angular-route/angular-route.min.js"></script>
     <script src="~/js/app.js"></script>
     <script src="~/ViewModels/usersMainViewModel.js"></script>
+    <script src="~/bower_components/multiselect/js/jquery.multi-select.js"></script>
+    <script src="~/bower_components/caret/jquery.caret.js"></script>
+    <script src="~/bower_components/jquery-tag-editor/jquery.tag-editor.js"></script>
+    <script src="~/js/site.js"></script>
+    <script src="~/js/Team.js"></script>
 </body>
 </html>
