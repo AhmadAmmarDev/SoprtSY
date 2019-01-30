@@ -1,5 +1,5 @@
-﻿$(".personItem").click(function () {
-    var perosnName = $('.personItem').data().personName;
+﻿$("#playersList li").click(function (data) {
+    var perosnName = data;
     $('#selectedTeamMembers').tagEditor('addTag', perosnName);
 
 });

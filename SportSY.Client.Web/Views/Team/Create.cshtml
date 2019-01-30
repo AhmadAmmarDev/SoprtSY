@@ -20,14 +20,14 @@
             foreach (var person in persons)
             {
                 var personName = @person.FirstName +" " + @person.LastName;
-                <li>
-                    <div class="personItem" data-person-name="@personName">
+                <li  data-person-name="@personName">
+                    <div class="personItem">
                         <div id="personImage">
                             <img src="~/images/basketball-player.png" class="playerAvatar"/>
                         </div>
                         <div class="personInfomation">
                             <h3>
-                                <p>personName</p>
+                                <p>@personName</p>
                             </h3>
                             <h5>Goal Keeper</h5>
                         </div>
