@@ -14,6 +14,8 @@ namespace SportSY.Client.Web.Controllers
     {
         private IPersonRepository _personRepository { get; set; }
 
+        private ITeamRepository _teamRepository { get; set; }
+
         public TeamController(
             IPersonRepository personRepository )
         {
@@ -29,6 +31,16 @@ namespace SportSY.Client.Web.Controllers
             var persons = _personRepository.GetItems();
             ViewBag.Persons = persons;
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(object playersList)
+        {
+            var persons = _personRepository.GetItems();
+            ViewBag.Persons = persons;
+            // team name , team members l
+            //_teamRepository.AddItem()
+            return RedirectToAction("Team","Create");
         }
     }
 }

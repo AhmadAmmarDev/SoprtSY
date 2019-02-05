@@ -10,5 +10,8 @@ namespace SportSY.Data.Repository.SQL.Models
         public string LastName { get; set; }
         public string DateOfBirth { get; set; }
         public string EmailAddress { get; set; }
+        public virtual ICollection<TeamMembers> TeamMembers { get; set; }
+
+
     }
 }

@@ -327,6 +327,12 @@ namespace SportSY.Data.Repository.SQL.Models
 
                 entity.Property(e => e.UserName).HasMaxLength(256);
             });
+
+            modelBuilder.Entity<TeamMembers>(entity =>
+            {
+               
+               
+            });
         }
     }
 }

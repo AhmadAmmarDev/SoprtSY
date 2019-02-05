@@ -10,6 +10,7 @@ namespace SportSY.Client.Web.Models
     public class ApplicationUser : IdentityUser<Guid>
     {
         public Guid PersonId { get; set; }
+
     }
 
     public class Role : IdentityRole<Guid> { }

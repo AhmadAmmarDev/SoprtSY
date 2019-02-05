@@ -62,7 +62,7 @@ namespace SportSY.Client.Web.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                _personRepository.GetItems().ToList();
+                
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
@@ -229,6 +229,8 @@ namespace SportSY.Client.Web.Controllers
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    // TODO add user regeristarion
+                    //_personRepository.AddItem();
                     _logger.LogInformation("ApplicationUser created a new account with password.");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
