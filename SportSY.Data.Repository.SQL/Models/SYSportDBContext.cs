@@ -33,6 +33,8 @@ namespace SportSY.Data.Repository.SQL.Models
         public virtual DbSet<Teams> Teams { get; set; }
         public virtual DbSet<UserLogins> UserLogins { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<TeamMembers> TeamMembers { get; set; }
+
 
         // Unable to generate entity type for table 'dbo.TeamMembers'. Please see the warning messages.
         // Unable to generate entity type for table 'dbo.RequestStatuses'. Please see the warning messages.
@@ -328,11 +330,17 @@ namespace SportSY.Data.Repository.SQL.Models
                 entity.Property(e => e.UserName).HasMaxLength(256);
             });
 
-            modelBuilder.Entity<TeamMembers>(entity =>
-            {
-               
-               
-            });
+            modelBuilder.Entity<TeamMembers>().HasKey(k => new {k.PersonID, k.TeamID});
+            modelBuilder.Entity<TeamMembers>()
+                .HasOne<Teams>(sc => sc.Team)
+                .WithMany(s => s.TeamMembers)
+                .HasForeignKey(sc => sc.TeamID);
+
+
+            modelBuilder.Entity<TeamMembers>()
+                .HasOne<Persons>(sc => sc.Person)
+                .WithMany(s => s.TeamMembers)
+                .HasForeignKey(sc => sc.PersonID);
         }
     }
 }

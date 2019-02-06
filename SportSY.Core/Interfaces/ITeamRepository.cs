@@ -9,6 +9,6 @@ namespace SportSY.Core.Interfaces
 {
     public interface ITeamRepository : IRepository<Team>
     {
-        void AddItem(Team newItem, List<Guid> TeamMemberIds);
+        void AddItem(Team newItem, List<Guid> TeamMemberIds, Guid CaptinId);
     }
 }

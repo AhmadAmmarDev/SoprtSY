@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace SportSY.Core.Models
 {
-    public class Team : Model
+    public  enum RequestStatus
     {
-        public string ArabicName { get; set; }
-        public string EnglishName { get; set; }
+        Pending = 1,
+        Accepeted = 2,
+        Rejected = 3
     }
 }

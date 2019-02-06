@@ -8,34 +8,48 @@
 <head>
     <link href="~/bower_components/jquery-tag-editor/jquery.tag-editor.css" rel="stylesheet" />
 </head>
-<p> create team pls !!!</p>
-<div id="creatTeamMainContainer">
-    <div id="selectedPesonContainer">
-        <textarea id="selectedTeamMembers"></textarea>
+<form>
+    <p> create team pls !!!</p>
+    <div id="creatTeamMainContainer">
+        <div id="selectedPesonContainer">
+            <textarea id="selectedTeamMembers"></textarea>
+
+        </div>
+        <ul id="playersList">
+            @{
+                List<Person> persons = ViewBag.Persons;
+                foreach (var person in persons)
+                {
+                    var personName = @person.FirstName +" " + @person.LastName;
+                    <li  data-person-name="@personName" data-person-ID="@person.ID">
+                        <div class="personItem">
+                            <div id="personImage">
+                                <img src="~/images/basketball-player.png" class="playerAvatar"/>
+                            </div>
+                            <div class="personInfomation">
+                                <h3>
+                                    <p>@personName</p>
+                                </h3>
+                                <h5>Goal Keeper</h5>
+                            </div>
+                        </div>
+                    </li>
+                }
+            }
+        </ul>
 
     </div>
-    <ul id="playersList">
-        @{
-            List<Person> persons = ViewBag.Persons;
-            foreach (var person in persons)
-            {
-                var personName = @person.FirstName +" " + @person.LastName;
-                <li  data-person-name="@personName" data-person-ID="@person.ID">
-                    <div class="personItem">
-                        <div id="personImage">
-                            <img src="~/images/basketball-player.png" class="playerAvatar"/>
-                        </div>
-                        <div class="personInfomation">
-                            <h3>
-                                <p>@personName</p>
-                            </h3>
-                            <h5>Goal Keeper</h5>
-                        </div>
-                    </div>
-                </li>
-            }
-        }
-    </ul>
 
-</div>
+    <div class="form-group">
+        <label>Team Arabic Name</label>
+        <input type="text" class="form-control" id="arabicNametext" placeholder="Arabic Name">
+    </div>
+    <div class="form-group">
+        <label >Team English Name</label>
+        <input type="text" class="form-control" id="englishNametext" placeholder="Eglish Name">
+    </div>
+    <button type="button" class="btn btn-dark" id="submitTeamButton">Create</button>
+
+</form>
+
 
