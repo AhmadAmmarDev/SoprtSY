@@ -14,6 +14,7 @@ using SportSY.Client.Web.Models;
 using SportSY.Client.Web.Models.AccountViewModels;
 using SportSY.Client.Web.Services;
 using SportSY.Core.Interfaces;
+using SportSY.Core.Models;
 
 namespace SportSY.Client.Web.Controllers
 {
@@ -62,13 +63,13 @@ namespace SportSY.Client.Web.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                
+
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
-                  
+
                     _logger.LogInformation("ApplicationUser logged in.");
                     return RedirectToLocal(returnUrl);
                 }
@@ -225,7 +226,16 @@ namespace SportSY.Client.Web.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+               
+                var person = new Person() {
+                    ID = Guid.NewGuid(),
+                    DateOfBirth = model.DateOfBirth,
+                    EmailAddress = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName
+                };
+                _personRepository.AddItem(person);
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email ,PersonId = person.ID};
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
