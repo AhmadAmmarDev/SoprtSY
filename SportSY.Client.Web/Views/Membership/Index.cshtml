@@ -1,1 +1,31 @@
-﻿@model Request
+﻿@using SportSY.Core.Models; 
+<head>
+    <link href="~/bower_components/jquery-tag-editor/jquery.tag-editor.css" rel="stylesheet" />
+</head>
+<form>
+    this is member ship page
+
+
+    <div class="requestsMainContainer">
+        @{
+            List<Team> TeamsRequestsList  = ViewBag.TeamRequstsList;
+
+            <div id="teamRequest">
+                <ul class="teamRequestList">
+                    @foreach (Team req in TeamsRequestsList)
+                    {
+                        <li>
+                            @req.ArabicName "Ask you to join them" 
+                        </li>
+                    }
+                </ul>
+            </div>
+
+            <div id="matchRquest"></div>
+            <div></div>
+        }
+    </div>
+
+</form>
+
+

@@ -35,5 +35,15 @@ namespace SportSY.Data.Repository.SQL.Repositories
             //}
 
         }
+
+        public List<Guid>  GetPendingMembershipByPersonID(Guid personId)
+        {
+            List<Guid> result = null;
+            if(personId != null)
+            {
+                 result = DB.TeamMembers.Where(e => e.PersonID == personId && e.RequestStatusID == (int)RequestStatus.Pending).Select(e => e.TeamID).ToList();
+            }
+            return result;
+        }
     }
 }
