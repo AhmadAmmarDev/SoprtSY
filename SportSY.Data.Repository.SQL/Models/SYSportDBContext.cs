@@ -329,8 +329,7 @@ namespace SportSY.Data.Repository.SQL.Models
 
                 entity.Property(e => e.UserName).HasMaxLength(256);
             });
-
-            modelBuilder.Entity<TeamMembers>().HasKey(k => new {k.PersonID, k.TeamID});
+            modelBuilder.Entity<TeamMembers>().HasKey(e => new { e.PersonID, e.TeamID });
             modelBuilder.Entity<TeamMembers>()
                 .HasOne<Teams>(sc => sc.Team)
                 .WithMany(s => s.TeamMembers)

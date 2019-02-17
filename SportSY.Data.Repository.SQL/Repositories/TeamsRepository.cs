@@ -10,7 +10,7 @@ namespace SportSY.Data.Repository.SQL.Repositories
 {
     public class TeamsRepository : SQLRepositoryBase<Team, Teams>, ITeamRepository
     {
-
+        
         public void AddItem(Team newItem, List<Guid> TeamMemberIds, Guid CaptinId)
         {
             var dbItem = Mapper.Map(newItem, new Teams());
@@ -44,6 +44,23 @@ namespace SportSY.Data.Repository.SQL.Repositories
                  result = DB.TeamMembers.Where(e => e.PersonID == personId && e.RequestStatusID == (int)RequestStatus.Pending).Select(e => e.TeamID).ToList();
             }
             return result;
+        }
+
+
+        public void AcceptTeamMember(Guid teamID, Guid personId)
+        {
+            var teamMember = DB.TeamMembers.FirstOrDefault(e => e.TeamID == teamID && e.PersonID == personId);
+            if (teamMember != null)
+                teamMember.RequestStatusID = (int)RequestStatus.Accepeted;
+            DB.SaveChanges();
+        }
+
+        public void RejectTeamMember(Guid teamID, Guid personId)
+        {
+            var teamMember = DB.TeamMembers.FirstOrDefault(e => e.TeamID == teamID && e.PersonID == personId);
+            if (teamMember != null)
+                teamMember.RequestStatusID = (int)RequestStatus.Rejected;
+            DB.SaveChanges();
         }
     }
 }

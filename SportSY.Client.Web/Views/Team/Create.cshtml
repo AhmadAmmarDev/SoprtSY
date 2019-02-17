@@ -1,15 +1,8 @@
 ﻿@using SportSY.Core.Models
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-@*@inject Person PersonModel*@
+
 <head>
-    <link href="~/bower_components/jquery-tag-editor/jquery.tag-editor.css" rel="stylesheet" />
 </head>
 <form>
-    <p> create team pls !!!</p>
     <div id="creatTeamMainContainer">
         <div id="selectedPesonContainer">
             <textarea id="selectedTeamMembers"></textarea>
@@ -20,11 +13,11 @@
                 List<Person> persons = ViewBag.Persons;
                 foreach (var person in persons)
                 {
-                    var personName = @person.FirstName +" " + @person.LastName;
-                    <li  data-person-name="@personName" data-person-ID="@person.ID">
+                    var personName = @person.FirstName + " " + @person.LastName;
+                    <li data-person-name="@personName" data-person-ID="@person.ID">
                         <div class="personItem">
                             <div id="personImage">
-                                <img src="~/images/basketball-player.png" class="playerAvatar"/>
+                                <img src="~/images/basketball-player.png" class="playerAvatar" />
                             </div>
                             <div class="personInfomation">
                                 <h3>
@@ -45,7 +38,7 @@
         <input type="text" class="form-control" id="arabicNametext" placeholder="Arabic Name">
     </div>
     <div class="form-group">
-        <label >Team English Name</label>
+        <label>Team English Name</label>
         <input type="text" class="form-control" id="englishNametext" placeholder="Eglish Name">
     </div>
     <button type="button" class="btn btn-dark" id="submitTeamButton">Create</button>

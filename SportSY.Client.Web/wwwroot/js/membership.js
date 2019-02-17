@@ -1,0 +1,3 @@
+﻿$("#acceptTeamMembershipButton").click(function () {
+    $.post
+});

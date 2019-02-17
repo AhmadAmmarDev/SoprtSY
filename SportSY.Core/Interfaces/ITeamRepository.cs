@@ -13,5 +13,8 @@ namespace SportSY.Core.Interfaces
 
 
         List<Guid> GetPendingMembershipByPersonID(Guid personId);
+
+        void AcceptTeamMember(Guid teamID, Guid personId);
+        void RejectTeamMember(Guid teamID, Guid personId);
     }
 }

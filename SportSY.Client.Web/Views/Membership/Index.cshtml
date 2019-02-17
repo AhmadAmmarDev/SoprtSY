@@ -1,21 +1,22 @@
-﻿@using SportSY.Core.Models; 
+﻿@using SportSY.Core.Models;
 <head>
     <link href="~/bower_components/jquery-tag-editor/jquery.tag-editor.css" rel="stylesheet" />
 </head>
-<form>
-    this is member ship page
-
-
+<form asp-controller="Membership" asp-action="Submit" method="post">
     <div class="requestsMainContainer">
         @{
-            List<Team> TeamsRequestsList  = ViewBag.TeamRequstsList;
+            List<Team> TeamsRequestsList = ViewBag.TeamRequstsList;
 
             <div id="teamRequest">
                 <ul class="teamRequestList">
                     @foreach (Team req in TeamsRequestsList)
                     {
                         <li>
-                            @req.ArabicName "Ask you to join them" 
+                            @req.ArabicName "Ask you to join them"
+                            <div>
+                                <button type="submit" class="btn btn-success" id="acceptTeamMembershipButton" asp-controller="Membership" asp-action="Submit" asp-route-status="1" asp-route-teamId="@req.ID">Accept</button>
+                                <button type="submit" class="btn btn-danger" asp-controller="Membership" asp-action="Submit" asp-route-status="0" asp-route-teamId="@req.ID">Reject</button>
+                            </div>
                         </li>
                     }
                 </ul>
@@ -29,3 +30,4 @@
 </form>
 
 
+<script src="~/js/site.js"></script>

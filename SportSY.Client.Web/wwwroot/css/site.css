@@ -33,15 +33,17 @@
         display: none;
     }
 }
-
+#navigationbar{
+    margin-bottom:50px;
+}
 #createTeamButton {
     background-color: black;
     color: whitesmoke;
-    width:300px;
-    height:150px;
-    border:0;
-    font-size:40px;
-    padding:20px;
+    width: 300px;
+    height: 150px;
+    border: 0;
+    font-size: 40px;
+    padding: 20px;
 }
 #createTeamButonContainer {
     padding:0;
@@ -71,4 +73,24 @@
 }
 #selectedPesonContainer {
     margin-bottom:20px;
+}
+#match-teams-list {
+    list-style: none;
+    border: solid 2px ghostwhite;
+    margin-left:10px;
+    margin-top:10px;
+}
+.team-match-list-item-input-check {
+    margin-left: auto;
+    width: 35px;
+    height: 35px;
+
+}
+
+
+/*Matches */
+
+#createMatchesMainContainer {
+    display: inline-flex;
+    margin-top: 10px;
 }

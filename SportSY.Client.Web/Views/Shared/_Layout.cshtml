@@ -85,29 +85,32 @@
     <link rel="stylesheet" href="~/css/owl.carousel.min.css">
     <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="~/css/aos.css">
+    <link href="~/bower_components/jquery-tag-editor/jquery.tag-editor.css" rel="stylesheet" />
+    <link href="~/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <link href="~/bower_components/jquery-toast-plugin/dist/jquery.toast.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/style.css">
 
     <link href="~/css/site.css" rel="stylesheet" />
 </head>
 <body>
     <header class="site-navbar absolute transparent" role="banner">
-        <div class="py-3">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-6 col-md-3">
-                        <a href="#" class="text-secondary px-2 pl-0"><span class="icon-facebook"></span></a>
-                        <a href="#" class="text-secondary px-2"><span class="icon-instagram"></span></a>
-                        <a href="#" class="text-secondary px-2"><span class="icon-twitter"></span></a>
-                        <a href="#" class="text-secondary px-2"><span class="icon-linkedin"></span></a>
-                    </div>
-                    <div class="col-6 col-md-9 text-right">
-                        <div class="d-inline-block"><a href="#" class="text-secondary p-2 d-flex align-items-center"><span class="icon-envelope mr-3"></span> <span class="d-none d-md-block">youremail@domain.com</span></a></div>
-                        <div class="d-inline-block"><a href="#" class="text-secondary p-2 d-flex align-items-center"><span class="icon-phone mr-0 mr-md-3"></span> <span class="d-none d-md-block">+1 232 3532 321</span></a></div>
+        @*<div class="py-3">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-6 col-md-3">
+                            <a href="#" class="text-secondary px-2 pl-0"><span class="icon-facebook"></span></a>
+                            <a href="#" class="text-secondary px-2"><span class="icon-instagram"></span></a>
+                            <a href="#" class="text-secondary px-2"><span class="icon-twitter"></span></a>
+                            <a href="#" class="text-secondary px-2"><span class="icon-linkedin"></span></a>
+                        </div>
+                        <div class="col-6 col-md-9 text-right">
+                            <div class="d-inline-block"><a href="#" class="text-secondary p-2 d-flex align-items-center"><span class="icon-envelope mr-3"></span> <span class="d-none d-md-block">youremail@domain.com</span></a></div>
+                            <div class="d-inline-block"><a href="#" class="text-secondary p-2 d-flex align-items-center"><span class="icon-phone mr-0 mr-md-3"></span> <span class="d-none d-md-block">+1 232 3532 321</span></a></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <nav class="site-navigation position-relative text-right bg-black text-md-right" role="navigation">
+            </div>*@
+        <nav class="site-navigation position-relative text-right bg-black text-md-right" id="navigationbar" role="navigation">
             <div class="container position-relative">
                 <div class="site-logo">
                     <a href="index.html"><img src="../images/logo.png" alt=""></a>
@@ -124,6 +127,7 @@
     </div>
     @RenderSection("Scripts", required: false)
     <script src="~/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="~/bower_components/bootstrap/site/docs/4.1/assets/js/vendor/popper.min.js"></script>
     <script src="~/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="~/js/jquery-migrate-3.0.1.min.js"></script>
     <script src="~/js/jquery-ui.js"></script>
@@ -141,7 +145,10 @@
     <script src="~/bower_components/multiselect/js/jquery.multi-select.js"></script>
     <script src="~/bower_components/caret/jquery.caret.js"></script>
     <script src="~/bower_components/jquery-tag-editor/jquery.tag-editor.js"></script>
+    <script src="~/bower_components/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
+    <script src="~/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
     <script src="~/js/site.js"></script>
     <script src="~/js/Team.js"></script>
+    <script src="~/js/match.js"></script>
 </body>
 </html>

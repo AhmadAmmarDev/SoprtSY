@@ -2,22 +2,26 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/SoprtSY",
+      "sslPort": 0
+    },
     "iisExpress": {
-      "applicationUrl": "http://localhost:57409/",
-      "sslPort": 44330
+      "applicationUrl": "http://localhost:5709/",
+      "sslPort": 0
     }
   },
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "https://localhost:44330/",
+      "launchUrl": "http://localhost:5709",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
     "SportSY.Client.Web": {
-      "commandName": "Project",
+      "commandName": "IIS",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

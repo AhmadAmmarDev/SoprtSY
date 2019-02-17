@@ -39,5 +39,23 @@ namespace SportSY.Client.Web.Controllers
             ViewBag.TeamRequstsList = teamsRequestList;
             return View(ViewBag);
         }
+
+        [HttpPost]
+        public ActionResult Submit(int status, string teamId)
+        {
+            var loggedInUser = _userManager.GetUserAsync(HttpContext.User).Result;
+            if (status == 1)
+            {
+                Guid teamID = Guid.Parse(teamId);
+                _teamRepository.AcceptTeamMember(teamID, loggedInUser.PersonId);
+            }
+            else if(status == 0)
+            {
+                Guid teamID = Guid.Parse(teamId);
+                _teamRepository.RejectTeamMember(teamID, loggedInUser.PersonId);
+
+            }
+            return RedirectToAction("Index");
+        }
     }
 }

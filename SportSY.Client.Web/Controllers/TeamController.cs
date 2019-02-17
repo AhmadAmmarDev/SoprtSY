@@ -73,8 +73,6 @@ namespace SportSY.Client.Web.Controllers
             var captinPersonId = _userManager.GetUserAsync(User).Result.PersonId;
             _teamRepository.AddItem(team, validPersonsIds, captinPersonId);
             ViewBag.Persons = _personsList;
-            // team name , team members l
-            //_teamRepository.AddItem()
             return RedirectToAction("Create", "Team");
         }
     }
