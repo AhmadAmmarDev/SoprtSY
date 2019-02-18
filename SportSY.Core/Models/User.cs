@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace SportSY.Core.Models
 {
-   public class User : Model
-    {
-        public Guid PersonID { get; set; }
-    }
+	public class User : Model
+	{
+		public Guid PersonID { get; set; }
+	}
 }

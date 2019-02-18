@@ -7,8 +7,8 @@ using SportSY.Core.Models;
 
 namespace SportSY.Core.Interfaces
 {
-    public interface ITeamRepository : IRepository<Team>
-    {
-        void AddItem(Team newItem, List<Guid> TeamMemberIds, Guid CaptinId);
-    }
+	public interface ITeamRepository : IRepository<Team>
+	{
+		void AddItem(Team newItem, List<Guid> TeamMemberIds, Guid CaptinId);
+	}
 }

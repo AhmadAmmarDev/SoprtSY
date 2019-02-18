@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SportSY.Core.Models
 {
-    public class Team : Model
-    {
-        public string ArabicName { get; set; }
-        public string EnglishName { get; set; }
-    }
+	public class Team : Model
+	{
+		public string ArabicName { get; set; }
+		public string EnglishName { get; set; }
+	}
 }

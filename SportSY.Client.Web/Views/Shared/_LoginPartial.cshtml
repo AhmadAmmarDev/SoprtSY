@@ -1,5 +1,6 @@
 @using Microsoft.AspNetCore.Identity
 @using SportSY.Client.Web.Models
+@using SportSY.Data.Repository.SQL.Models
 
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
@@ -43,10 +44,10 @@
 else
 {<ul class="site-menu js-clone-nav d-none d-md-block">
 
-    <li class="has-children"><a asp-area="" asp-controller="Account" asp-action="Register">Register</a></li>
-    <li class="has-children"><a asp-area="" asp-controller="Account" asp-action="Login">Log in</a></li>
-    <li class="has-children"><a href="~/pages/about.html">About</a></li>
-    <li class="has-children"><a href="~/pages/contact.html">Contact</a></li>
- </ul>
+        <li class="has-children"><a asp-area="" asp-controller="Account" asp-action="Register">Register</a></li>
+        <li class="has-children"><a asp-area="" asp-controller="Account" asp-action="Login">Log in</a></li>
+        <li class="has-children"><a href="~/pages/about.html">About</a></li>
+        <li class="has-children"><a href="~/pages/contact.html">Contact</a></li>
+    </ul>
 
-    }
+}

@@ -8,12 +8,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace SportSY.Client.Web.Controllers
 {
-    public class MatchController : Controller
-    {
-        // GET: /<controller>/
-        public IActionResult Index()
-        {
-            return View();
-        }
-    }
+	public class MatchController : Controller
+	{
+		// GET: /<controller>/
+		public IActionResult Index()
+		{
+			return View();
+		}
+	}
 }

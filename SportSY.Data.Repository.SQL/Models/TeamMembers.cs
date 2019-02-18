@@ -12,6 +12,6 @@ namespace SportSY.Data.Repository.SQL.Models
         public Persons Person { get; set; }
         public bool IsCaptin { get; set; }
 
-        public int RequestStatusID { get;set; }
+        public int RequestStatusID { get; set; }
     }
 }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace SportSY.Core.Models
 {
-    public  enum RequestStatus
-    {
-        Pending = 1,
-        Accepeted = 2,
-        Rejected = 3
-    }
+	public enum RequestStatus
+	{
+		Pending = 1,
+		Accepeted = 2,
+		Rejected = 3
+	}
 }

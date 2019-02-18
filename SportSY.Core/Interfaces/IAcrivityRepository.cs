@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SportSY.Core.Interfaces
 {
-    class IAcrivityRepository
-    {
-    }
+	class IAcrivityRepository
+	{
+	}
 }

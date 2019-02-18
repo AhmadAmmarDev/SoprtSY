@@ -6,14 +6,24 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="8.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.2.1" />
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.2.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SportSY.Core\SportSY.Core.csproj" />
+    <Folder Include="Data\" />
   </ItemGroup>
-
+  <ItemGroup>
+    <Compile Remove="Models\SYSportDBContext.cs" />
+    <Compile Remove="Data\ApplicationDbContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SportSy.Core\SportSy.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SportSY.Data.Repository.SQL">
+      <HintPath>bin\Debug\netcoreapp2.2\SportSY.Data.Repository.SQL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>
