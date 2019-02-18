@@ -94,3 +94,10 @@
     display: inline-flex;
     margin-top: 10px;
 }
+
+#matchActivityDropdown {
+    width: 150px;
+}
+#matchPlaceDropdown {
+    width: 150px;
+}

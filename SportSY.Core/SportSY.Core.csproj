@@ -40,13 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IAcrivityRepository.cs" />
+    <Compile Include="Interfaces\IActivityRepository.cs" />
     <Compile Include="Interfaces\IPersonRepository.cs" />
+    <Compile Include="Interfaces\IPlaceRepository.cs" />
+    <Compile Include="Interfaces\IRequestRepository.cs" />
     <Compile Include="Interfaces\ITeamRepository.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\Model.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Place.cs" />
     <Compile Include="Models\Request.cs" />
     <Compile Include="Models\RequestStatus.cs" />
     <Compile Include="Models\Team.cs" />
