@@ -1,33 +1,62 @@
 ﻿@using SportSY.Core.Models;
+@using SportSY.Client.Web.ViewModels;
 <head>
     <link href="~/bower_components/jquery-tag-editor/jquery.tag-editor.css" rel="stylesheet" />
 </head>
-<form asp-controller="Membership" asp-action="Submit" method="post">
-    <div class="requestsMainContainer">
-        @{
-            List<Team> TeamsRequestsList = ViewBag.TeamRequstsList;
 
-            <div id="teamRequest">
-                <ul class="teamRequestList">
-                    @foreach (Team req in TeamsRequestsList)
+<div id="requestsMainContainer">
+    <div>
+        <p>Member ship to team requests</p>
+
+        <form asp-controller="Membership" asp-action="Submit" method="post">
+            <div class="requestsMainContainer">
+                @{
+                    List<Team> TeamsRequestsList = ViewBag.TeamRequstsList;
+
+                    <div id="teamRequest">
+                        <ul class="teamRequestList">
+                            @foreach (Team req in TeamsRequestsList)
+                            {
+                                <li>
+                                    @req.ArabicName "Ask you to join them"
+                                    <div>
+                                        <button type="submit" class="btn btn-success" id="acceptTeamMembershipButton" asp-controller="Membership" asp-action="Submit" asp-route-status="1" asp-route-teamId="@req.ID">Accept</button>
+                                        <button type="submit" class="btn btn-danger" asp-controller="Membership" asp-action="Submit" asp-route-status="0" asp-route-teamId="@req.ID">Reject</button>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+
+                    <div id="matchRquest"></div>
+                }
+            </div>
+        </form>
+    </div>
+    <div>
+        <p>Matches request </p>
+        <form asp-controller="Membership" asp-action="SubmitMatch" method="post">
+            <ul>
+                @{
+                    var matchesRequest = ViewBag.MatchesRequests;
+                    foreach (MatchViewModel item in matchesRequest)
                     {
                         <li>
-                            @req.ArabicName "Ask you to join them"
-                            <div>
-                                <button type="submit" class="btn btn-success" id="acceptTeamMembershipButton" asp-controller="Membership" asp-action="Submit" asp-route-status="1" asp-route-teamId="@req.ID">Accept</button>
-                                <button type="submit" class="btn btn-danger" asp-controller="Membership" asp-action="Submit" asp-route-status="0" asp-route-teamId="@req.ID">Reject</button>
-                            </div>
+                            Team @item.FromTeam request to play with your team @item.ToTeam
+                            a @item.AcitivityName in @item.PlaceName at @item.MatchDate
+                            <button type="submit" class="btn btn-success">Accept</button>
+                            <button type="submit" class="btn btn-danger" >Reject</button>
+
                         </li>
+
                     }
-                </ul>
-            </div>
+                }
+            </ul>
+        </form>
 
-            <div id="matchRquest"></div>
-            <div></div>
-        }
     </div>
+</div>
 
-</form>
 
 
 <script src="~/js/site.js"></script>
