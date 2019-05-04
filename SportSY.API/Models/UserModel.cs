@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 
-namespace SportSY.Data.Repository.SQL.Models
+namespace SportSY.API.Models
 {
-    public partial class Users
+    public class UserModel
     {
-        public Users()
-        {
-            AspNetUserRoles = new HashSet<AspNetUserRoles>();
-            Claims = new HashSet<Claims>();
-            UserLogins = new HashSet<UserLogins>();
-        }
-
         public Guid Id { get; set; }
         public int AccessFailedCount { get; set; }
         public string ConcurrencyStamp { get; set; }
@@ -27,11 +19,11 @@ namespace SportSY.Data.Repository.SQL.Models
         public string SecurityStamp { get; set; }
         public bool TwoFactorEnabled { get; set; }
         public string UserName { get; set; }
-        public Guid PersonId { get; set; }
+        public string PersonFirstName { get; set; }
+        public string PersonLastName { get; set; }
+        public string PersonDateOfBirth { get; set; }
+        public string PersonEmailAddress { get; set; }
 
-        public virtual Persons Person { get; set; }
-        public virtual ICollection<AspNetUserRoles> AspNetUserRoles { get; set; }
-        public virtual ICollection<Claims> Claims { get; set; }
-        public virtual ICollection<UserLogins> UserLogins { get; set; }
+
     }
 }

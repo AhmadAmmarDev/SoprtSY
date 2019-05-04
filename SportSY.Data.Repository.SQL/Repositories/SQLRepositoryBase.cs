@@ -6,18 +6,15 @@ using Microsoft.EntityFrameworkCore;
 using SportSY.Core;
 using SportSY.Core.Models;
 using SportSY.Data.Repository.SQL.Models;
-using IConfigurationProvider = Microsoft.Extensions.Configuration.IConfigurationProvider;
 
 namespace SportSY.Data.Repository.SQL.Repositories
 {
     public abstract class SQLRepositoryBase<TModel, TTable> : IRepository<TModel>
         where TModel : Model, new() where TTable : class, new()
     {
-     
-
         public SQLRepositoryBase()
         {
-            _db = new SYSportDBContext();
+            _db = new sysportdbContext();
             _table = _db.Set<TTable>();
             if (!IsInitialized)
             {
@@ -25,6 +22,8 @@ namespace SportSY.Data.Repository.SQL.Repositories
                 {
                     cfg.CreateMap<TTable, TModel>();
                     cfg.CreateMap<TModel, TTable>();
+                    cfg.CreateMap<User,Users>();
+                    cfg.CreateMap<Users, User>();
                 });
                 Mapper mapper = new Mapper(mappingConfiguration);
                 _mapperConfiguration = mappingConfiguration;
@@ -33,10 +32,10 @@ namespace SportSY.Data.Repository.SQL.Repositories
             }
         }
 
- 
-        
-        private SYSportDBContext _db;
-        public SYSportDBContext DB
+
+
+        private sysportdbContext _db;
+        public sysportdbContext DB
         {
             get { return _db; }
             set { _db = value; }
@@ -82,7 +81,7 @@ namespace SportSY.Data.Repository.SQL.Repositories
             var dbItem = _db.Set<TTable>().Find(existItem.ID);
             _db.Set<TTable>().Remove(dbItem);
             _db.SaveChanges();
-        }       
+        }
 
         public virtual async Task<TModel> GetItemById(TModel item)
         {

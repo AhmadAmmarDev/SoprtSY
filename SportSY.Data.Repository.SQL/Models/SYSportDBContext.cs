@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace SportSY.Data.Repository.SQL.Models
 {
-    public partial class SYSportDBContext : DbContext
+    public partial class sysportdbContext : DbContext
     {
-        public SYSportDBContext()
+        public sysportdbContext()
         {
         }
 
-        public SYSportDBContext(DbContextOptions<SYSportDBContext> options)
+        public sysportdbContext(DbContextOptions<sysportdbContext> options)
             : base(options)
         {
         }
@@ -33,8 +33,6 @@ namespace SportSY.Data.Repository.SQL.Models
         public virtual DbSet<Teams> Teams { get; set; }
         public virtual DbSet<UserLogins> UserLogins { get; set; }
         public virtual DbSet<Users> Users { get; set; }
-        public virtual DbSet<TeamMembers> TeamMembers { get; set; }
-
 
         // Unable to generate entity type for table 'dbo.TeamMembers'. Please see the warning messages.
         // Unable to generate entity type for table 'dbo.RequestStatuses'. Please see the warning messages.
@@ -47,7 +45,7 @@ namespace SportSY.Data.Repository.SQL.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=.;Database=SYSportDB;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=.;Database=sysportdb;Trusted_Connection=True;");
             }
         }
 
@@ -328,18 +326,14 @@ namespace SportSY.Data.Repository.SQL.Models
                 entity.Property(e => e.NormalizedUserName).HasMaxLength(256);
 
                 entity.Property(e => e.UserName).HasMaxLength(256);
+
+                entity.HasOne(d => d.Person)
+                    .WithMany(p => p.Users)
+                    .HasForeignKey(d => d.PersonId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Persons_Users_UserId");
+                    
             });
-            modelBuilder.Entity<TeamMembers>().HasKey(e => new { e.PersonID, e.TeamID });
-            modelBuilder.Entity<TeamMembers>()
-                .HasOne<Teams>(sc => sc.Team)
-                .WithMany(s => s.TeamMembers)
-                .HasForeignKey(sc => sc.TeamID);
-
-
-            modelBuilder.Entity<TeamMembers>()
-                .HasOne<Persons>(sc => sc.Person)
-                .WithMany(s => s.TeamMembers)
-                .HasForeignKey(sc => sc.PersonID);
         }
     }
 }

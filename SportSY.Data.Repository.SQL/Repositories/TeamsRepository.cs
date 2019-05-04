@@ -10,17 +10,21 @@ namespace SportSY.Data.Repository.SQL.Repositories
 {
     public class TeamsRepository : SQLRepositoryBase<Team, Teams>, ITeamRepository
     {
-        
+        public void AcceptTeamMember(Guid teamID, Guid personId)
+        {
+            throw new NotImplementedException();
+        }
+
         public void AddItem(Team newItem, List<Guid> TeamMemberIds, Guid CaptinId)
         {
             var dbItem = Mapper.Map(newItem, new Teams());
             dbItem.Id = Guid.NewGuid();
             DB.Teams.Add(dbItem);
-            foreach (var memberId in TeamMemberIds)
-            {
-                DB.TeamMembers.Add(new TeamMembers() { PersonID = memberId, TeamID = dbItem.Id, RequestStatusID = (int)RequestStatus.Pending, IsCaptin = false });
-            }
-            DB.TeamMembers.Add(new TeamMembers() { PersonID = CaptinId, TeamID = dbItem.Id, RequestStatusID = (int)RequestStatus.Pending, IsCaptin = true });
+            //foreach (var memberId in TeamMemberIds)
+            //{
+            //    DB.TeamMembers.Add(new TeamMembers() { PersonID = memberId, TeamID = dbItem.Id, RequestStatusID = (int)RequestStatus.Pending, IsCaptin = false });
+            //}
+            //DB.TeamMembers.Add(new TeamMembers() { PersonID = CaptinId, TeamID = dbItem.Id, RequestStatusID = (int)RequestStatus.Pending, IsCaptin = true });
 
             DB.SaveChanges();
             //DB.Teams.Add(dbItem);
@@ -41,26 +45,31 @@ namespace SportSY.Data.Repository.SQL.Repositories
             List<Guid> result = null;
             if(personId != null)
             {
-                 result = DB.TeamMembers.Where(e => e.PersonID == personId && e.RequestStatusID == (int)RequestStatus.Pending).Select(e => e.TeamID).ToList();
+                 //result = DB.TeamMembers.Where(e => e.PersonID == personId && e.RequestStatusID == (int)RequestStatus.Pending).Select(e => e.TeamID).ToList();
             }
             return result;
         }
 
-
-        public void AcceptTeamMember(Guid teamID, Guid personId)
-        {
-            var teamMember = DB.TeamMembers.FirstOrDefault(e => e.TeamID == teamID && e.PersonID == personId);
-            if (teamMember != null)
-                teamMember.RequestStatusID = (int)RequestStatus.Accepeted;
-            DB.SaveChanges();
-        }
-
         public void RejectTeamMember(Guid teamID, Guid personId)
         {
-            var teamMember = DB.TeamMembers.FirstOrDefault(e => e.TeamID == teamID && e.PersonID == personId);
-            if (teamMember != null)
-                teamMember.RequestStatusID = (int)RequestStatus.Rejected;
-            DB.SaveChanges();
+            throw new NotImplementedException();
         }
+
+
+        //public void AcceptTeamMember(Guid teamID, Guid personId)
+        //{
+        //    var teamMember = DB.TeamMembers.FirstOrDefault(e => e.TeamID == teamID && e.PersonID == personId);
+        //    if (teamMember != null)
+        //        teamMember.RequestStatusID = (int)RequestStatus.Accepeted;
+        //    DB.SaveChanges();
+        //}
+
+        //public void RejectTeamMember(Guid teamID, Guid personId)
+        //{
+        //    var teamMember = DB.TeamMembers.FirstOrDefault(e => e.TeamID == teamID && e.PersonID == personId);
+        //    if (teamMember != null)
+        //        teamMember.RequestStatusID = (int)RequestStatus.Rejected;
+        //    DB.SaveChanges();
+        //}
     }
 }
